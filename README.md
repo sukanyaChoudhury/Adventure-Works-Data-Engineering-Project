@@ -44,18 +44,29 @@ Note that the Data is stored in "CSV format" in ADLS Gen2 storage folders.
 
 ### Part 2: Data Transformation
 Data is Loaded into Azure Databricks where python jupitor Notebooks can be created to do the required transformations. 
-Cluster nodes, and compute are automatically managed by the Databricks service.
-The Data from bronze layer is cleaned and processed in the below steps and finally loaded into the silver layer using the **silver layer** script:
+Cluster nodes, and compute are automatically managed by the Databricks service. 
+The Data from bronze layer is cleaned and processed in the below steps and finally loaded into the silver layer in "Parquet format" using the **silver layer** script:
 - Data access using App:
    <img width="822" alt="image" src="https://github.com/user-attachments/assets/f7718e86-43a9-436f-bcef-71d8b0013793" />
 - Reading data from Bronze layer:
    <img width="821" alt="image" src="https://github.com/user-attachments/assets/ead5f129-fd95-40a2-9fdb-31ab7cde85e9" />
-- Transformations on :
+- Following Transformations are done on various tables :
   * Calendar table:
     * Added Month, MonthName, Year, DayName, Week, Day and DayofWeek columns to the Calendar table using it's date column
       <img width="775" alt="image" src="https://github.com/user-attachments/assets/6c9cdefb-d32c-46d2-9739-9526b98c6562" />
-      Output:
+      
       <img width="830" alt="image" src="https://github.com/user-attachments/assets/ae62bf39-a707-4f81-8f99-38d392bebf81" />
+    * After this, data is loaded into the silver layer as below:
+      <img width="677" alt="image" src="https://github.com/user-attachments/assets/4d00496f-e5cb-4d17-bd1f-ff4f7810d9ec" />
+  * Customers table:
+    * Added a column "fullName" by concatenating "Prefix", "firstName" and "LastName" Columns
+      <img width="779" alt="image" src="https://github.com/user-attachments/assets/faf9a999-bbb4-474c-972d-4759c0937011" />
+    * Data is loaded into the silver layer as below:
+      <img width="676" alt="image" src="https://github.com/user-attachments/assets/eb212dca-3eea-4e8d-ac81-bab742495e05" />
+
+
+
+   
 
        
 
