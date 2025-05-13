@@ -81,10 +81,13 @@ The Data from bronze layer is cleaned and processed in the below steps and final
   5) Create a gold schema within your synapse database.
   6) Create views for various tables from silver layer using the **Gold_views** script as below
      <img width="930" alt="image" src="https://github.com/user-attachments/assets/a434f0ff-d582-4f24-9de9-a9f3083f14f0" />
+
   7) Transfer the views created on silver layer into gold layer as external table using ctas and using the sql script **views_to_extTables_gold**
+
      <img width="778" alt="image" src="https://github.com/user-attachments/assets/ce622108-e39d-455a-b41e-d24d7f4de631" />
      <img width="784" alt="image" src="https://github.com/user-attachments/assets/294c931a-63a4-4be6-9f0a-568707682a37" />
-  8) List of the external tables created in synapse is below
+  9) List of the external tables created in synapse is below:<br>
+     
      <img width="247" alt="image" src="https://github.com/user-attachments/assets/3c2695e8-1a73-4d18-9b65-554b6e95ac99" />
 
 ### Part 4: Data Reporting
