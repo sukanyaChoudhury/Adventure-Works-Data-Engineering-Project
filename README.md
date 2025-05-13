@@ -71,6 +71,47 @@ The Data from bronze layer is cleaned and processed in the below steps and final
     * Data is loaded into the silver layer as below:
       <img width="692" alt="image" src="https://github.com/user-attachments/assets/d8bc2038-fd25-4290-8072-2c777ca5fe2b" />
 
+  ### Part 3: Data Loading into Synapse Analytics database
+  1) Create Synapse analytics Workspace with SQL server login and password
+  2) Allow synapse to connect with data lake to get data by adding the "Storage Blob Data Contributor role" to the synapse workspace
+     and adding it as a Managed Identity member to the data lake storage account access.
+     Go to the original/external storage account ->IAM-> Add role->Storage blob data contributor->Next-> check Managed Identity->Addmembers->Synapse Workspace
+  3) Create a synapse database under workspace.
+  4) Give yourself access by again adding yourself to the "Storage Blob Data Contributor role" and adding as a member to the storage account.
+  5) Create a gold schema within your synapse database.
+  6) Create views for various tables from silver layer using the **Gold_views** script as below
+     <img width="930" alt="image" src="https://github.com/user-attachments/assets/a434f0ff-d582-4f24-9de9-a9f3083f14f0" />
+  7) Transfer the views created on silver layer into gold layer as external table using ctas and using the sql script **views_to_extTables_gold**
+     <img width="778" alt="image" src="https://github.com/user-attachments/assets/ce622108-e39d-455a-b41e-d24d7f4de631" />
+     <img width="784" alt="image" src="https://github.com/user-attachments/assets/294c931a-63a4-4be6-9f0a-568707682a37" />
+  8) List of the external tables created in synapse is below
+     <img width="247" alt="image" src="https://github.com/user-attachments/assets/3c2695e8-1a73-4d18-9b65-554b6e95ac99" />
+
+### Part 4: Data Reporting
+
+Finally, load the data from the views using Microsoft Power BI. The Data is retrieved using DirectQuery to automatically run and update from the Cloud Pipelines.
+
+An Interactive Dashboard is created to showcase the sales data figures.
+
+<img width="885" alt="image" src="https://github.com/user-attachments/assets/48125a28-7d91-447e-bb74-0a3496979a74" />
+
+<img width="583" alt="image" src="https://github.com/user-attachments/assets/e636adfa-b84a-418f-b8e2-811debecc0c4" />
+
+## End Notes
+
+* This project provides a great overview to many of Azure services such as Azure Data Factory, Azure Databricks, Azure Synapse Analytics.
+
+* The resources we create in Azure can be secured by adding contributors into a Security Group. This feature is offered in Microsoft Entra ID (previously Azure Active Directory).
+Thus, whoever belonging to the Security group can access and contribute to the project freely.
+
+* The Database is although small, made it easier to visualize the scope and working of various services at once.
+
+
+
+
+
+
+
 
 
 
