@@ -30,3 +30,15 @@ AdventureWorksLT2017 Sales Database
 
 https://github.com/sukanyaChoudhury/Adventure-Works-Data-Engineering-Project/tree/main/Data
 
+## Implementation:
+
+### Part 1: Data Ingestion
+
+1. Data extraction from github into Data factory
+2. Create a Copy Pipeline with lookup, copy and foreach activities which dynamically loads the data from the Data folder of this github repository into Azure Data Lake Storage Gen2 "bronze" directory using parameters.
+
+Note that the Data is stored in "CSV format" in ADLS Gen2 storage folders.
+
+<img width="688" alt="ADF_pipeline" src="https://github.com/user-attachments/assets/496288f3-41b6-417a-8bd8-1001beb70aa6" />
+
+
