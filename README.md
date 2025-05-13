@@ -51,18 +51,26 @@ The Data from bronze layer is cleaned and processed in the below steps and final
 - Reading data from Bronze layer:
    <img width="821" alt="image" src="https://github.com/user-attachments/assets/ead5f129-fd95-40a2-9fdb-31ab7cde85e9" />
 - Following Transformations are done on various tables :
-  * Calendar table:
+  * **Calendar** table:
     * Added Month, MonthName, Year, DayName, Week, Day and DayofWeek columns to the Calendar table using it's date column
       <img width="775" alt="image" src="https://github.com/user-attachments/assets/6c9cdefb-d32c-46d2-9739-9526b98c6562" />
       
       <img width="830" alt="image" src="https://github.com/user-attachments/assets/ae62bf39-a707-4f81-8f99-38d392bebf81" />
     * After this, data is loaded into the silver layer as below:
       <img width="677" alt="image" src="https://github.com/user-attachments/assets/4d00496f-e5cb-4d17-bd1f-ff4f7810d9ec" />
-  * Customers table:
+      
+  * **Customers** table:
     * Added a column "fullName" by concatenating "Prefix", "firstName" and "LastName" Columns
       <img width="779" alt="image" src="https://github.com/user-attachments/assets/faf9a999-bbb4-474c-972d-4759c0937011" />
     * Data is loaded into the silver layer as below:
       <img width="676" alt="image" src="https://github.com/user-attachments/assets/eb212dca-3eea-4e8d-ac81-bab742495e05" />
+      
+   * **Products** table:
+    * Extract first characters before delimeter using split func and index
+      <img width="826" alt="image" src="https://github.com/user-attachments/assets/17191c70-3df2-41f2-8cea-a1108805001b" />
+    * Data is loaded into the silver layer as below:
+      <img width="692" alt="image" src="https://github.com/user-attachments/assets/d8bc2038-fd25-4290-8072-2c777ca5fe2b" />
+
 
 
 
