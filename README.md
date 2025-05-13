@@ -23,6 +23,7 @@ By working on this project, I was able to learn these skills:
 
 1) Azure Subscription (Azure Data Lake Storage Gen2, Azure Data Factory, Azure Key Vault, Azure Databricks, Azure Synapse Analytics, Microsoft Entra ID)
 2) Microsoft Power BI
+3) Creating app registrations, Secret key, assigning role to a storage account application.
 4) Download "AdventureWorksLT2017" Database csv files and upload them under the Data folder of this github repository.
 
 The Database CSV files used for this project demonstration are:
@@ -40,5 +41,13 @@ https://github.com/sukanyaChoudhury/Adventure-Works-Data-Engineering-Project/tre
 Note that the Data is stored in "CSV format" in ADLS Gen2 storage folders.
 
 <img width="688" alt="ADF_pipeline" src="https://github.com/user-attachments/assets/496288f3-41b6-417a-8bd8-1001beb70aa6" />
+
+### Part 2: Data Transformation
+Data is Loaded into Azure Databricks where PySpark Notebooks can be created to do the required transformations. 
+Cluster nodes, and compute are automatically managed by the Databricks service.
+The Data from bronze layer is cleaned and processed in the below steps and finally loaded into the silver layer using the **silver layer** script:
+1. Data access using App:
+   <img width="822" alt="image" src="https://github.com/user-attachments/assets/f7718e86-43a9-436f-bcef-71d8b0013793" />
+
 
 
