@@ -43,11 +43,21 @@ Note that the Data is stored in "CSV format" in ADLS Gen2 storage folders.
 <img width="688" alt="ADF_pipeline" src="https://github.com/user-attachments/assets/496288f3-41b6-417a-8bd8-1001beb70aa6" />
 
 ### Part 2: Data Transformation
-Data is Loaded into Azure Databricks where PySpark Notebooks can be created to do the required transformations. 
+Data is Loaded into Azure Databricks where python jupitor Notebooks can be created to do the required transformations. 
 Cluster nodes, and compute are automatically managed by the Databricks service.
 The Data from bronze layer is cleaned and processed in the below steps and finally loaded into the silver layer using the **silver layer** script:
 1. Data access using App:
    <img width="822" alt="image" src="https://github.com/user-attachments/assets/f7718e86-43a9-436f-bcef-71d8b0013793" />
+2. Reading data from Bronze layer:
+   <img width="821" alt="image" src="https://github.com/user-attachments/assets/ead5f129-fd95-40a2-9fdb-31ab7cde85e9" />
+3. Transformations on :
+       - Calendar table:
+            - Added Month, MonthName, Year, DayName, Week, Day and DayofWeek columns to the Calendar table using it's date column
+              <img width="775" alt="image" src="https://github.com/user-attachments/assets/6c9cdefb-d32c-46d2-9739-9526b98c6562" />
+              Output:
+              <img width="830" alt="image" src="https://github.com/user-attachments/assets/ae62bf39-a707-4f81-8f99-38d392bebf81" />
+
+       
 
 
 
